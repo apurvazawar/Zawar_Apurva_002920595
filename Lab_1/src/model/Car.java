@@ -4,6 +4,8 @@
  */
 package model;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author apurvazawar
@@ -26,13 +28,53 @@ public class Car {
     private String serviceRecords;
     private int warrantyYear;
     private String photo;
+    private int mileage;
+    private String date;
+    private int costOfService;
+    
+
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(int mileage) {
+        this.mileage = mileage;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getCostOfService() {
+        return costOfService;
+    }
+
+    public void setCostOfService(int costOfService) {
+        this.costOfService = costOfService;
+    }
 
     public String getBrand() {
         return brand;
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        if(brand.matches("[a-zA-Z]+")){
+            this.brand = brand;
+        }else{
+          JOptionPane.showMessageDialog(null,"Please enter brand name in alphabets!");
+        }
     }
 
     public String getModel() {
@@ -73,14 +115,6 @@ public class Car {
 
     public void setSeatsNo(int seatsNo) {
         this.seatsNo = seatsNo;
-    }
-
-    public String getLicensePlates() {
-        return licensePlate;
-    }
-
-    public void setLicensePlates(String licensePlate) {
-        this.licensePlate = licensePlate;
     }
 
     public String getoName() {
@@ -154,4 +188,5 @@ public class Car {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+    
 }

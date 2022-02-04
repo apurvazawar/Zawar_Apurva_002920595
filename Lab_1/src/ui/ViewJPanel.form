@@ -16,91 +16,85 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="licensePlate" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="oLicence" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="color" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="brand" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtBrand" alignment="0" pref="161" max="32767" attributes="0"/>
-                              <Component id="txtColor" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtLicencePlate" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtOName" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="txtOLicence" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="serviceRecords" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="warrantyYear" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="engineNo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="year" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="seatNo" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="model" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="388" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="oEmail" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="oSSN" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtModel" alignment="0" pref="146" max="32767" attributes="0"/>
-                                  <Component id="txtEngineNo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtServiceRecord" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtOEmail" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtOSSN" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="oTel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtOTel" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
-                          <Component id="txtSeatNo" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                          <Component id="txtWarrantyYear" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                          <Component id="txtYear" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="oName" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="Title" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="oAddress" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="photo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="oAddress" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txtOAddress" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="photo" min="-2" pref="443" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="422" max="-2" attributes="0"/>
+                          <Component id="serviceRecords" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="oName" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="licensePlate" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="color" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="brand" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="oLicence" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtBrand" alignment="0" pref="161" max="32767" attributes="0"/>
+                                      <Component id="txtColor" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtLicencePlate" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtOName" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="txtOLicence" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="engineNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="oEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="oSSN" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="model" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="warrantyYear" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtModel" alignment="0" pref="146" max="32767" attributes="0"/>
+                                          <Component id="txtEngineNo" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtOEmail" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtOSSN" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtWarrantyYear" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="oTel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="seatNo" min="-2" pref="77" max="-2" attributes="0"/>
+                                          <Component id="year" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="txtYear" min="-2" pref="75" max="-2" attributes="0"/>
+                                              <Component id="txtSeatNo" min="-2" pref="75" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="txtOTel" min="-2" pref="108" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="17" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -116,9 +110,9 @@
                   <Component id="brand" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="model" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtBrand" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="year" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="txtModel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="year" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -130,17 +124,11 @@
                   <Component id="txtEngineNo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="licensePlate" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtLicencePlate" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="serviceRecords" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtServiceRecord" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="warrantyYear" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtWarrantyYear" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="licensePlate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtLicencePlate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="warrantyYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtWarrantyYear" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -163,9 +151,16 @@
                   <Component id="oAddress" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtOAddress" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="photo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="221" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="serviceRecords" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="151" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="photo" min="-2" pref="181" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -182,9 +177,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="photo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Photo"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtYear">
       <Properties>
@@ -202,11 +194,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtOName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtServiceRecord">
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
@@ -338,5 +325,47 @@
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
     </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="serviceRecordsTable">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="3" rowCount="4">
+                <Column editable="false" title="Date" type="java.lang.Object"/>
+                <Column editable="false" title="Mileage" type="java.lang.Object"/>
+                <Column editable="false" title="Cost of Service" type="java.lang.Object"/>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
