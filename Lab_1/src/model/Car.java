@@ -4,8 +4,11 @@
  */
 package model;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author apurvazawar
@@ -25,13 +28,11 @@ public class Car {
     private int oLicense;
     private int oSSN;
     private String oAddress;
-    private String serviceRecords;
     private int warrantyYear;
     private String photo;
     private int mileage;
     private String date;
     private int costOfService;
-    
 
     public String getLicensePlate() {
         return licensePlate;
@@ -54,7 +55,7 @@ public class Car {
     }
 
     public void setDate(String date) {
-        this.date = date;
+        this.date = date;	
     }
 
     public int getCostOfService() {
@@ -70,11 +71,7 @@ public class Car {
     }
 
     public void setBrand(String brand) {
-        if(brand.matches("[a-zA-Z]+")){
-            this.brand = brand;
-        }else{
-          JOptionPane.showMessageDialog(null,"Please enter brand name in alphabets!");
-        }
+        this.brand = brand;
     }
 
     public String getModel() {
@@ -165,14 +162,6 @@ public class Car {
         this.oAddress = oAddress;
     }
 
-    public String getServiceRecords() {
-        return serviceRecords;
-    }
-
-    public void setServiceRecords(String serviceRecords) {
-        this.serviceRecords = serviceRecords;
-    }
-
     public int getWarrantyYear() {
         return warrantyYear;
     }
@@ -188,5 +177,5 @@ public class Car {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
-    
+
 }

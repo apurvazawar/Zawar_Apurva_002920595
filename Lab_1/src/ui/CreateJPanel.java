@@ -7,11 +7,15 @@ package ui;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import model.Car;
 import model.ServiceRecordsHistory;
@@ -131,6 +135,12 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtServiceRecordDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtServiceRecordDateActionPerformed(evt);
+            }
+        });
+
         txtModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtModelActionPerformed(evt);
@@ -151,14 +161,13 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        txtPhotoPath.setText("Picture path");
         txtPhotoPath.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhotoPathActionPerformed(evt);
             }
         });
 
-        serviceRecordDate.setText("Date");
+        serviceRecordDate.setText("Date (dd-MM-yyyy)");
 
         serviceRecordMileage.setText("Mileage (Km/L)");
 
@@ -347,6 +356,41 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEngineNoActionPerformed
 
+    private static boolean isAlphabetOrDigits(String str) {
+        return str.codePoints().allMatch(ch -> Character.isAlphabetic(ch) || Character.isDigit(ch));
+    }
+
+    private static boolean isAlphabet(String str) {
+        return str.codePoints().allMatch(ch -> Character.isAlphabetic(ch));
+    }
+     
+    public static boolean isDateValid(String date) {
+        try {
+            DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+            df.setLenient(false);
+            Date dt0 = df.parse(date);
+            Date dt1 = df.parse("01-01-1990");
+            String currentDate = df.format(new Date());
+            Date dt2 = df.parse(currentDate);
+            if(dt0.after(dt1) && dt0.before(dt2)){
+                return true;
+            } else {
+                return false;
+            }
+        } catch (ParseException e) {
+            return false;
+        }
+    }
+    
+    public static boolean isNumeric(String str) { 
+        try {  
+          Double.parseDouble(str);  
+          return true;
+        } catch(NumberFormatException e){  
+          return false;  
+        }  
+      }
+    
     private void btnUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadActionPerformed
         // TODO add your handling code here:
         JFileChooser choose = new JFileChooser();
@@ -361,25 +405,128 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        boolean saveCar=true;
         
-        car.setBrand(txtBrand.getText());
-        car.setColor(txtColor.getText());
-        car.setEngineNo(txtEngineNo.getText());
-        car.setLicensePlate(txtLicencePlate.getText());
-        car.setModel(txtModel.getText());
-        car.setSeatsNo(Integer.parseInt(txtSeatNo.getText()));
-        car.setServiceRecords(txtServiceRecordDate.getText());
-        car.setWarrantyYear(Integer.parseInt(txtWarrantyYear.getText()));
-        car.setYear(Integer.parseInt(txtYear.getText()));
-        car.setoAddress(txtOAddress.getText());
-        car.setoEmail(txtOEmail.getText());
-        car.setoLicense(Integer.parseInt(txtOLicence.getText()));
-        car.setoName(txtOName.getText());
-        car.setoSSN(Integer.parseInt(txtOSSN.getText()));
-        car.setoTel(Integer.parseInt(txtOTel.getText()));
+        if(txtBrand.getText().length() > 0 && isAlphabet(txtBrand.getText())){
+            car.setBrand(txtBrand.getText());
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter brand name in alphabets!");
+            saveCar=false;
+        }
+        
+        if(txtColor.getText().length() > 0 && isAlphabet(txtColor.getText())){
+           car.setColor(txtColor.getText());
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter the color in alphabets!");
+            saveCar=false;
+        }
+        
+        if(txtEngineNo.getText().length() > 0 && isAlphabetOrDigits(txtEngineNo.getText())){
+            car.setEngineNo(txtEngineNo.getText());
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter valid Engine no.!");
+            saveCar=false;
+        }
+
+        if(txtLicencePlate.getText().length() > 0 && isAlphabetOrDigits(txtLicencePlate.getText())){
+            car.setLicensePlate(txtLicencePlate.getText());
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter correct Licence plate number!");
+            saveCar=false;
+        }
+            
+        if(txtModel.getText().length() > 0 && isAlphabetOrDigits(txtModel.getText())){
+            car.setModel(txtModel.getText());
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter a valid model name!");
+            saveCar=false;
+        }
+        
+        if(txtSeatNo.getText().length() > 0 && Integer.parseInt(txtSeatNo.getText()) > 1 && Integer.parseInt(txtSeatNo.getText()) < 10){
+            car.setSeatsNo(Integer.parseInt(txtSeatNo.getText()));
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter seat number between 2 to 10!");
+            saveCar=false;
+        }
+        
+        if(txtWarrantyYear.getText().length() > 0 && Integer.parseInt(txtWarrantyYear.getText()) > 2 && Integer.parseInt(txtWarrantyYear.getText()) < 15){
+            car.setWarrantyYear(Integer.parseInt(txtWarrantyYear.getText()));
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter warranty year between 2 to 15!");
+            saveCar=false;
+        }
+         
+        if(txtYear.getText().length() > 0 && Integer.parseInt(txtYear.getText()) > 1989 && Integer.parseInt(txtYear.getText()) < 2023){
+            car.setYear(Integer.parseInt(txtYear.getText()));
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter the year between 1989 to 2023!");
+            saveCar=false;
+        }
+        
+        if(txtOAddress.getText().length() > 0) {
+            car.setoAddress(txtOAddress.getText());
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter a valid address!");
+            saveCar=false;
+        }
+        
+        String email = txtOEmail.getText();
+        if(email.length() > 0) {
+            String[] arrOfEmail = email.split("@");
+            String[] arrOfDomain = arrOfEmail[1].split(".");
+            String[] arrOfName = arrOfEmail[0].split(".");
+
+            boolean emailIsValid=true;
+
+            if(txtOEmail.getText().length() > 0 && arrOfEmail.length != 2 && !arrOfEmail[1].contains(".")) {
+                emailIsValid = false;
+            }
+
+            if (email.contains("..") || email.contains(".@") || email.contains("@.") || email.contains("._.") || email.endsWith(".")) {
+                emailIsValid = false;
+            }
+
+            if(emailIsValid){
+                car.setoEmail(txtOEmail.getText());
+            } else {
+                JOptionPane.showMessageDialog(null,"Please enter valid Email id!");
+                saveCar=false;
+            }
+
+            if(txtOLicence.getText().length() > 0 && txtOLicence.getText().length() == 9){
+                car.setoLicense(Integer.parseInt(txtOLicence.getText()));
+            }
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter valid Owner's Licence no.!");
+            saveCar=false;
+        }
+        
+        if(txtOName.getText().length() > 0&& isAlphabet(txtOName.getText())){
+            car.setoName(txtOName.getText());
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter Owner's name in alphabets!");
+            saveCar=false;
+        }
+        
+        if(txtOSSN.getText().length() > 0 && txtOSSN.getText().length() == 9){
+            car.setoSSN(Integer.parseInt(txtOSSN.getText()));
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter a valid SSN!");
+            saveCar=false;
+        }
+        
+        if(txtOTel.getText().length() > 0 && txtOTel.getText().length() == 10){
+            car.setoTel(Integer.parseInt(txtOTel.getText()));
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter valid Telephone no.!");
+            saveCar=false;
+        }
+        
         car.setPhoto(String.valueOf(photo.getIcon()));
 
-        JOptionPane.showMessageDialog(this, "Car saved successfully!!");
+        if(saveCar) {
+            JOptionPane.showMessageDialog(this, "Car saved successfully!!");
+        }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtPhotoPathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhotoPathActionPerformed
@@ -388,22 +535,37 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnAddServiceRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddServiceRecordActionPerformed
         // TODO add your handling code here:
-        
-        String serviceRecordDate = txtServiceRecordDate.getText();
-        int serviceRecordMileage = Integer.parseInt(txtMileage.getText());
-        int costOfService = Integer.parseInt(txtCostOfService.getText());
-        
         Car cs = history.addNewServiceRecord();
+        boolean saveServiceRecord=true;
         
-        cs.setMileage(serviceRecordMileage);
-        cs.setCostOfService(costOfService);
-        cs.setDate(serviceRecordDate);
+        if(txtMileage.getText().length() > 0 && Integer.parseInt(txtMileage.getText()) > 2 && Integer.parseInt(txtMileage.getText()) < 20){
+            cs.setMileage(Integer.parseInt(txtMileage.getText()));
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter mileage between 2 to 20!");
+            saveServiceRecord=false;
+        }
         
-        JOptionPane.showMessageDialog(this, "New service record added");
+        if(txtCostOfService.getText().length() > 0 && isNumeric(txtCostOfService.getText())){
+            cs.setCostOfService(Integer.parseInt(txtCostOfService.getText()));
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter mileage between 2 to 20!");
+            saveServiceRecord=false;
+        }
         
-        txtServiceRecordDate.setText("");
-        txtMileage.setText("");
-        txtCostOfService.setText("");
+        if(txtServiceRecordDate.getText().length() > 0 && isDateValid(txtServiceRecordDate.getText()) && txtServiceRecordDate.getText().length() == 10) {
+            cs.setDate(txtServiceRecordDate.getText());
+        } else {
+            JOptionPane.showMessageDialog(null,"Please enter correct date and format!");
+            saveServiceRecord=false;
+        }
+        
+        if(saveServiceRecord) {
+            JOptionPane.showMessageDialog(this, "New service record added");
+
+            txtServiceRecordDate.setText("");
+            txtMileage.setText("");
+            txtCostOfService.setText("");
+        }
     }//GEN-LAST:event_btnAddServiceRecordActionPerformed
 
     private void txtBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBrandActionPerformed
@@ -413,6 +575,10 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void txtCostOfServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCostOfServiceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCostOfServiceActionPerformed
+
+    private void txtServiceRecordDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtServiceRecordDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtServiceRecordDateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
